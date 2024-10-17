@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Service</title>
+    <link rel="icon" href="assets/img/logo/favicon.jpg" type="image/png"> <!-- Favicon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .slider {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            justify-content: center; /* Center items for desktop */
+            width: 100%; /* Full width */
+            padding: 20px 0; /* Ample vertical padding */
+            background-color: transparent; /* Start transparent */
+            transition: background-color 0.3s ease, position 0.3s ease; /* Smooth transition */
+        }
+        .header.scrolled {
+            background-color: white; /* Background becomes white on scroll */
+            position: fixed; /* Make header sticky */
+            top: 0; /* Stick to the top */
+            color: navy; /* Change text color to navy when scrolled */
+        }
+        .header.scrolled .nav a,
+        .header.scrolled .mobile-nav a {
+            color: navy; /* Change nav item color to navy when scrolled */
+        }
+        .header.scrolled .menu-icon {
+            color: navy; /* Change hamburger icon color to navy when scrolled */
+        }
+        .header-content {
+            display: flex;
+            align-items: center; /* Center items vertically */
+            gap: 320px; /* Space between logo and nav for desktop */
+            padding: 0 40px; /* Horizontal padding for content */
+        }
+        .logo {
+            font-size: 24px;
+            color: white;
+        }
+        .logo img {
+            height: 40px; /* Adjust height as needed */
+        }
+        .nav {
+            display: flex;
+            gap: 40px; /* Space between nav items */
+        }
+        .nav a {
+            color: white; /* Default nav item color */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .nav a:hover {
+            color: #FFD700; /* Gold color */
+        }
+        .menu-icon {
+            display: none; /* Hidden by default */
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        .mobile-nav {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 80%; /* Width of mobile menu */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px;
+            gap: 20px; /* Space between items */
+            margin-top: 40px; /* Increased margin for more space from header */
+        }
+        .mobile-nav a {
+            color: white; /* Default mobile nav item color */
+            text-decoration: none;
+            font-weight: bold;
+            text-align: left; /* Align text to the left for mobile */
+        }
+        .mobile-nav a.active {
+            color: #FFD700; /* Highlight color for the active item */
+        }
+
+        /* Dots for slide indicator */
+        .dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.6;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .dot.active {
+            opacity: 1; /* Full opacity for the active dot */
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: navy; /* Navy blue background for footer */
+            color: white;
+            text-align: center;
+            padding: 20px 0; /* Vertical padding */
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                gap: 0; /* No gap for mobile */
+                padding: 0 20px; /* Less horizontal padding */
+                justify-content: space-between; /* Space out logo and menu icon */
+                width: 100%; /* Full width for header content */
+            }
+            .logo {
+                font-size: 20px; /* Slightly smaller logo */
+            }
+            .nav {
+                display: none; /* Hide the desktop nav on mobile */
+            }
+            .menu-icon {
+                display: block; /* Show the menu icon on mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                align-items: center; /* Center items vertically */
+            }
+            .nav {
+                flex-direction: column; /* Stack nav items */
+                gap: 10px; /* Space between nav items */
+            }
+            .nav a {
+                font-size: 16px; /* Smaller font size for nav items */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider">
+    <div class="slides">
+        <div class="slide" style="background-image: url('assets/img/home_bg/bg-01.png');"></div>
+        <div class="slide" style="background-image: url('assets/img/home_bg/bg-02.png');"></div>
+        <div class="slide" style="background-image: url('assets/img/home_bg/bg-03.png');"></div>
+    </div>
+    <div class="header" id="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo/logo.png" alt="AutoService Logo">
+            </a>
+            <div class="nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#" class="active">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="dots" id="dots"></div>
+</div>
+
+<div class="footer">
+    &copy; <span id="currentYear"></span> Panesar Crankshaft Center. All Rights Reserved.
+</div>
+
+<script>
+    const slides = document.querySelector('.slides');
+    const dotsContainer = document.getElementById('dots');
+    let index = 0;
+
+    // Create dots based on the number of slides
+    function createDots() {
+        const slideCount = slides.children.length;
+        for (let i = 0; i < slideCount; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            dot.addEventListener('click', () => showSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function showSlide(n) {
+        index = (n + slides.children.length) % slides.children.length;
+        slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+
+        // Update dots
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    setInterval(() => {
+        showSlide(index + 1);
+    }, 5000); // Change slide every 5 seconds
+
+    function toggleMenu() {
+        const mobileNav = document.getElementById('mobileNav');
+        const header = document.getElementById('header');
+
+        // Set the top position of mobileNav below the header
+        mobileNav.style.top = (header.offsetHeight + 20) + 'px'; // Add some spacing if necessary
+
+        // Toggle the mobile menu display
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+
+        // If opening, prioritize first item
+        if (mobileNav.style.display === 'flex') {
+            mobileNav.querySelector('a.active').classList.remove('active');
+            mobileNav.querySelector('a').classList.add('active');
+        }
+    }
+
+    // Close the mobile menu when clicking outside of it
+    window.onclick = function(event) {
+        const mobileNav = document.getElementById('mobileNav');
+        const header = document.getElementById('header');
+
+        if (!header.contains(event.target) && mobileNav.style.display === 'flex') {
+            mobileNav.style.display = 'none';
+        }
+    };
+
+    // Change header background on scroll
+    window.onscroll = function() {
+        const header = document.getElementById('header');
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    };
+
+    // Set current year for copyright
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Initialize dots and set the first dot as active
+    createDots();
+    showSlide(0); // Show the first slide initially
+</script>
+
+</body>
+</html>
+
