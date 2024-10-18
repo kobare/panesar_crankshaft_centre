@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto Service</title>
-    <link rel="icon" href="assets/img/logo/favicon.jpg" type="image/png"> <!-- Favicon link -->
+    <link rel="icon" href="assets/img/logo/favicon.jpg" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body, html {
@@ -28,89 +28,125 @@
             height: 100%;
             background-size: cover;
             background-position: center;
+            /* Removed opacity */
+        }
+        .overlay {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            color: white;
+            font-size: 36px;
+            text-align: center;
+            z-index: 5; 
+            padding: 20px; 
+        }
+        .static-text {
+            margin-bottom: 10px; 
+        }
+        .typing {
+            display: inline-block; 
+            border-right: 2px solid white;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: none; 
+            opacity: 1; 
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
         }
         .header {
-            position: absolute;
-            top: 20px;
+            position: fixed;
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
             display: flex;
-            justify-content: center; /* Center items for desktop */
-            width: 100%; /* Full width */
-            padding: 20px 0; /* Ample vertical padding */
-            background-color: transparent; /* Start transparent */
-            transition: background-color 0.3s ease, position 0.3s ease; /* Smooth transition */
-        }
-        .header.scrolled {
-            background-color: white; /* Background becomes white on scroll */
-            position: fixed; /* Make header sticky */
-            top: 0; /* Stick to the top */
-            color: navy; /* Change text color to navy when scrolled */
-        }
-        .header.scrolled .nav a,
-        .header.scrolled .mobile-nav a {
-            color: navy; /* Change nav item color to navy when scrolled */
-        }
-        .header.scrolled .menu-icon {
-            color: navy; /* Change hamburger icon color to navy when scrolled */
+            justify-content: center;
+            width: 100%;
+            padding: 15px 0;
+            background-color: white;
+            color: navy;
         }
         .header-content {
             display: flex;
-            align-items: center; /* Center items vertically */
-            gap: 320px; /* Space between logo and nav for desktop */
-            padding: 0 40px; /* Horizontal padding for content */
+            align-items: center;
+            gap: 320px;
+            padding: 0 40px;
         }
         .logo {
             font-size: 24px;
-            color: white;
+            color: navy;
         }
         .logo img {
-            height: 40px; /* Adjust height as needed */
+            height: 40px;
         }
         .nav {
             display: flex;
-            gap: 40px; /* Space between nav items */
+            gap: 40px;
+            position: relative;
         }
         .nav a {
-            color: white; /* Default nav item color */
+            color: navy;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
+            position: relative;
         }
         .nav a:hover {
-            color: #FFD700; /* Gold color */
+            color: #FFD700; 
+        }
+        .nav a.active {
+            color: navy; 
+        }
+        .nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background-color: orange;
+            border-radius: 2px;
         }
         .menu-icon {
-            display: none; /* Hidden by default */
+            display: none;
             font-size: 24px;
-            color: white;
+            color: navy;
             cursor: pointer;
         }
         .mobile-nav {
-            display: none; /* Hidden by default */
+            display: none;
             flex-direction: column;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            position: fixed; 
+            top: 25%; 
+            left: 50%; 
+            transform: translate(-50%, 0); 
             background-color: rgba(0, 0, 0, 0.8);
-            width: 80%; /* Width of mobile menu */
-            border-radius: 10px; /* Rounded corners */
+            width: 80%;
+            max-height: 70%; 
+            border-radius: 10px;
             padding: 20px;
-            gap: 20px; /* Space between items */
-            margin-top: 40px; /* Increased margin for more space from header */
+            gap: 20px;
+            overflow-y: auto; 
+            z-index: 20; 
         }
         .mobile-nav a {
-            color: white; /* Default mobile nav item color */
+            color: white;
             text-decoration: none;
             font-weight: bold;
-            text-align: left; /* Align text to the left for mobile */
+            text-align: left;
         }
         .mobile-nav a.active {
-            color: #FFD700; /* Highlight color for the active item */
+            color: #FFD700; 
         }
-
-        /* Dots for slide indicator */
         .dots {
             position: absolute;
             bottom: 20px;
@@ -124,54 +160,51 @@
             height: 12px;
             background-color: white;
             border-radius: 50%;
-            opacity: 0.6;
             cursor: pointer;
             transition: opacity 0.3s;
         }
         .dot.active {
-            opacity: 1; /* Full opacity for the active dot */
+            opacity: 1;
         }
-
-        /* Footer Styles */
         .footer {
-            background-color: navy; /* Navy blue background for footer */
+            background-color: navy;
             color: white;
             text-align: center;
-            padding: 20px 0; /* Vertical padding */
+            padding: 20px 0;
             position: relative;
             bottom: 0;
             width: 100%;
         }
-
-        /* Responsive Styles */
         @media (max-width: 768px) {
             .header-content {
-                gap: 0; /* No gap for mobile */
-                padding: 0 20px; /* Less horizontal padding */
-                justify-content: space-between; /* Space out logo and menu icon */
-                width: 100%; /* Full width for header content */
+                gap: 0;
+                padding: 0 20px;
+                justify-content: space-between;
+                width: 100%;
             }
             .logo {
-                font-size: 20px; /* Slightly smaller logo */
+                font-size: 20px;
             }
             .nav {
-                display: none; /* Hide the desktop nav on mobile */
+                display: none;
             }
             .menu-icon {
-                display: block; /* Show the menu icon on mobile */
+                display: block;
             }
         }
-
         @media (max-width: 480px) {
             .header-content {
-                align-items: center; /* Center items vertically */
+                align-items: center;
             }
             .nav {
-                flex-direction: column; /* Stack nav items */
-                gap: 10px; /* Space between nav items */
+                flex-direction: column;
+                gap: 10px;
             }
             .nav a {
-                font-size: 16px; /* Smaller font size for nav items */
+                font-size: 16px;
+            }
+            .overlay {
+                font-size: 24px; 
             }
         }
     </style>
@@ -184,13 +217,17 @@
         <div class="slide" style="background-image: url('assets/img/home_bg/bg-02.png');"></div>
         <div class="slide" style="background-image: url('assets/img/home_bg/bg-03.png');"></div>
     </div>
+    <div class="overlay">
+        <div class="static-text">We help our customers</div>
+        <div class="typing" id="typingText"></div>
+    </div>
     <div class="header" id="header">
         <div class="header-content">
             <a href="index.html" class="logo">
                 <img src="assets/img/logo/logo.png" alt="AutoService Logo">
             </a>
-            <div class="nav">
-                <a href="#">Home</a>
+            <div class="nav" id="nav">
+                <a href="#" class="active">Home</a>
                 <a href="#">About</a>
                 <a href="#">Services</a>
                 <a href="#">Gallery</a>
@@ -221,7 +258,25 @@
     const dotsContainer = document.getElementById('dots');
     let index = 0;
 
-    // Create dots based on the number of slides
+    const services = [
+        "offset grinding",
+        "rebuild crankshaft",
+        "balance engine components",
+        "replace bearings",
+        "refurbish connecting rods",
+        "recondition camshafts",
+        "tune engine performance",
+        "inspect oil passages",
+        "with engine rebuilds",
+        "with custom crankshaft modifications"
+    ];
+
+    let typingInterval;
+    let typingIndex = 0;
+    let currentServiceIndex = 0;
+    const typingSpeed = 150; 
+    const pauseDuration = 2000; 
+
     function createDots() {
         const slideCount = slides.children.length;
         for (let i = 0; i < slideCount; i++) {
@@ -235,46 +290,60 @@
     function showSlide(n) {
         index = (n + slides.children.length) % slides.children.length;
         slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+        updateDots(index);
+    }
 
-        // Update dots
+    function updateDots(activeIndex) {
         const dots = document.querySelectorAll('.dot');
         dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
+            dot.classList.toggle('active', i === activeIndex);
         });
     }
 
     setInterval(() => {
         showSlide(index + 1);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
+
+    function typingEffect() {
+        const textElement = document.getElementById("typingText");
+        clearInterval(typingInterval); 
+
+        typingInterval = setInterval(() => {
+            if (typingIndex < services[currentServiceIndex].length) {
+                textElement.innerHTML = services[currentServiceIndex].substring(0, typingIndex + 1);
+                typingIndex++;
+            } else {
+                clearInterval(typingInterval);
+                setTimeout(() => {
+                    typingIndex = 0; 
+                    currentServiceIndex = (currentServiceIndex + 1) % services.length; 
+                    typingEffect(); 
+                }, pauseDuration);
+            }
+        }, typingSpeed);
+    }
 
     function toggleMenu() {
         const mobileNav = document.getElementById('mobileNav');
-        const header = document.getElementById('header');
-
-        // Set the top position of mobileNav below the header
-        mobileNav.style.top = (header.offsetHeight + 20) + 'px'; // Add some spacing if necessary
-
-        // Toggle the mobile menu display
         mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
-
-        // If opening, prioritize first item
         if (mobileNav.style.display === 'flex') {
+            document.body.style.overflow = 'hidden'; 
             mobileNav.querySelector('a.active').classList.remove('active');
             mobileNav.querySelector('a').classList.add('active');
+        } else {
+            document.body.style.overflow = ''; 
         }
     }
 
-    // Close the mobile menu when clicking outside of it
     window.onclick = function(event) {
         const mobileNav = document.getElementById('mobileNav');
         const header = document.getElementById('header');
-
         if (!header.contains(event.target) && mobileNav.style.display === 'flex') {
             mobileNav.style.display = 'none';
+            document.body.style.overflow = ''; 
         }
     };
 
-    // Change header background on scroll
     window.onscroll = function() {
         const header = document.getElementById('header');
         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -284,12 +353,10 @@
         }
     };
 
-    // Set current year for copyright
     document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-    // Initialize dots and set the first dot as active
     createDots();
-    showSlide(0); // Show the first slide initially
+    showSlide(0);
+    typingEffect(); 
 </script>
 
 </body>
