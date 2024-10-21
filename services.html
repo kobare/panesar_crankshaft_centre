@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panesar Crankshaft Centre - Services</title>
+    <link rel="icon" href="assets/img/logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .banner {
+            background-color: #b13c43;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            flex-shrink: 0;
+        }
+        .services {
+            max-width: 1000px; /* Increased max width */
+            margin: 40px auto;
+            text-align: left;
+            padding: 20px;
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px; /* Increased gap between columns */
+        }
+        .service-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+        .service-item i {
+            font-size: 24px;
+            color: #b13c43;
+            margin-right: 10px;
+        }
+        .service-item h3 {
+            margin: 0;
+            color: #b13c43;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 15px 0;
+            background-color: white;
+            color: black; 
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 320px;
+            padding: 0 40px;
+        }
+        .logo {
+            font-size: 24px;
+            color: black; 
+        }
+        .logo img {
+            height: 40px;
+        }
+        .nav {
+            display: flex;
+            gap: 40px;
+            position: relative;
+        }
+        .nav a {
+            color: black; 
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav a:hover {
+            color: #b13c43; 
+        }
+        .nav a.active {
+            color: black; 
+        }
+        .nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background-color: #b13c43; 
+            border-radius: 2px;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: black; 
+            cursor: pointer;
+        }
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            position: fixed; 
+            top: 25%; 
+            left: 50%; 
+            transform: translate(-50%, 0); 
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 80%;
+            max-height: 70%; 
+            border-radius: 10px;
+            padding: 20px;
+            gap: 20px;
+            overflow-y: auto; 
+            z-index: 20; 
+        }
+        .mobile-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: left;
+        }
+        .mobile-nav a.active {
+            color: #b13c43; 
+        }
+        .footer {
+            background-color: black; 
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            flex-shrink: 0; 
+        }
+        @media (max-width: 768px) {
+            .header-content {
+                gap: 0;
+                padding: 0 20px;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .logo {
+                font-size: 20px;
+            }
+            .nav {
+                display: none;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .services {
+                grid-template-columns: 1fr; /* Single column on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .header-content {
+                align-items: center;
+            }
+            .nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header" id="header">
+    <div class="header-content">
+        <a href="index.html" class="logo">
+            <img src="assets/img/logo/logo.jpg" alt="PCC Logo">
+        </a>
+        <div class="nav" id="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#" class="active">Services</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</div>
+<div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#" class="active">Services</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+</div>
+
+<div class="banner">
+    <h1>Our Services</h1>
+    <p>Expert solutions for all your crankshaft and engine performance needs.</p>
+</div>
+
+<div class="services">
+    <div class="service-item">
+        <i class="fas fa-wrench"></i>
+        <div>
+            <h3>Crankshaft Repair</h3>
+            <p>We offer professional crankshaft repair services using advanced techniques to restore your engine's performance.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-cogs"></i>
+        <div>
+            <h3>Manufacturing</h3>
+            <p>Our state-of-the-art workshop manufactures high-quality crankshafts and engine components tailored to your specifications.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-balance-scale"></i>
+        <div>
+            <h3>Engine Balancing</h3>
+            <p>Achieve optimal performance with our engine balancing services, ensuring smooth and efficient operation.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-tools"></i>
+        <div>
+            <h3>Custom Fabrication</h3>
+            <p>We provide custom fabrication services for unique projects, leveraging our expertise in mechanical engineering.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-search"></i>
+        <div>
+            <h3>Inspection and Diagnostics</h3>
+            <p>Thorough inspection and diagnostics to identify issues and recommend effective solutions for your engine problems.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-truck"></i>
+        <div>
+            <h3>Free Collection and Delivery</h3>
+            <p>Enjoy our free collection and delivery service within Nairobi, providing convenience and ease for our customers.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-grinder"></i>
+        <div>
+            <h3>Crankshaft Grinding</h3>
+            <p>Precision crankshaft grinding to restore your engine's efficiency and performance.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-hammer"></i>
+        <div>
+            <h3>Engine Block Resleeving & Line Boring</h3>
+            <p>Expert resleeving and line boring services for improved engine performance.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-wrench"></i>
+        <div>
+            <h3>Replacing Bearings</h3>
+            <p>Replacement of worn-out bearings to maintain engine integrity and function.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-cogs"></i>
+        <div>
+            <h3>Refurbishing Connecting Rods</h3>
+            <p>Expert refurbishment of connecting rods to ensure optimal engine performance.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-recycle"></i>
+        <div>
+            <h3>Reconditioning Crankshafts</h3>
+            <p>Comprehensive reconditioning services for crankshafts to extend engine life.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-cogs"></i>
+        <div>
+            <h3>Engine Rebuilds</h3>
+            <p>Complete engine rebuild services to restore your vehicle's performance.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-cogs"></i>
+        <div>
+            <h3>Custom Crankshaft Modifications</h3>
+            <p>Tailored modifications to crankshafts to meet specific performance requirements.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-clipboard"></i>
+        <div>
+            <h3>Cylinder Head Refacing</h3>
+            <p>Precision refacing of cylinder heads for better engine sealing and performance.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-tools"></i>
+        <div>
+            <h3>Lathe Work</h3>
+            <p>All types of lathe work to meet a variety of engineering needs.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-truck-moving"></i>
+        <div>
+            <h3>Earth Moving Machinery Repairs</h3>
+            <p>Specialized repairs for earth moving machinery to keep your projects on track.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-cogs"></i>
+        <div>
+            <h3>Gear Cutting</h3>
+            <p>Expert gear cutting services for precision-engineered components.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-wrench"></i>
+        <div>
+            <h3>Thermal Cold Spray Welding</h3>
+            <p>Advanced thermal cold spray welding for rollers, shafts, and more.</p>
+        </div>
+    </div>
+    <div class="service-item">
+        <i class="fas fa-wrench"></i>
+        <div>
+            <h3>On-Site Line Boring</h3>
+            <p>Line boring services for heavy earth moving machines on-site in Nairobi.</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    &copy; <span id="currentYear"></span> Panesar Crankshaft Centre. All Rights Reserved.
+</div>
+
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    function toggleMenu() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+        if (mobileNav.style.display === 'flex') {
+            document.body.style.overflow = 'hidden'; 
+        } else {
+            document.body.style.overflow = ''; 
+        }
+    }
+
+    window.onclick = function(event) {
+        const mobileNav = document.getElementById('mobileNav');
+        const header = document.getElementById('header');
+        if (!header.contains(event.target) && mobileNav.style.display === 'flex') {
+            mobileNav.style.display = 'none';
+            document.body.style.overflow = ''; 
+        }
+    };
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panesar Crankshaft Centre - About Us</title>
+    <link rel="icon" href="assets/img/logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .banner {
+            background-color: #b13c43;
+            color: white;
+            text-align: center;
+            padding: 80px 20px; /* Increased padding */
+            flex-shrink: 0;
+        }
+        .about {
+            max-width: 1000px; /* Increased max width */
+            margin: 40px auto;
+            text-align: left; /* Align text to the left */
+            padding: 20px;
+            flex: 1; /* Allow the about section to grow */
+        }
+        .about-content {
+            display: flex;
+            align-items: flex-start; /* Align items to the top */
+            padding: 20px;
+        }
+        .about-image {
+            max-width: 40%; /* Adjust size as needed */
+            height: auto;
+            margin-right: 20px; /* Space between image and text */
+        }
+        .about-content h2 {
+            margin: 0; /* Remove default margin */
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 15px 0;
+            background-color: white;
+            color: black; 
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 320px;
+            padding: 0 40px;
+        }
+        .logo {
+            font-size: 24px;
+            color: black; 
+        }
+        .logo img {
+            height: 40px;
+        }
+        .nav {
+            display: flex;
+            gap: 40px;
+            position: relative;
+        }
+        .nav a {
+            color: black; 
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav a:hover {
+            color: #b13c43; 
+        }
+        .nav a.active {
+            color: black; 
+        }
+        .nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background-color: #b13c43; 
+            border-radius: 2px;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: black; 
+            cursor: pointer;
+        }
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            position: fixed; 
+            top: 25%; 
+            left: 50%; 
+            transform: translate(-50%, 0); 
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 80%;
+            max-height: 70%; 
+            border-radius: 10px;
+            padding: 20px;
+            gap: 20px;
+            overflow-y: auto; 
+            z-index: 20; 
+        }
+        .mobile-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: left;
+        }
+        .mobile-nav a.active {
+            color: #b13c43; 
+        }
+        .footer {
+            background-color: black; 
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            flex-shrink: 0; /* Ensure footer stays at the bottom */
+        }
+        @media (max-width: 768px) {
+            .header-content {
+                gap: 0;
+                padding: 0 20px;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .logo {
+                font-size: 20px;
+            }
+            .nav {
+                display: none;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .about-content {
+                flex-direction: column; /* Stack content vertically on mobile */
+                align-items: center; /* Center-align items */
+            }
+            .about-image {
+                max-width: 100%; /* Full width on mobile */
+                margin: 0 0 20px 0; /* Margin below image */
+            }
+        }
+        @media (max-width: 480px) {
+            .header-content {
+                align-items: center;
+            }
+            .nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header" id="header">
+    <div class="header-content">
+        <a href="index.html" class="logo">
+            <img src="assets/img/logo/logo.jpg" alt="PCC Logo">
+        </a>
+        <div class="nav" id="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</div>
+<div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<div class="banner">
+    <h1>Welcome to Panesar Crankshaft Centre</h1>
+    <p>Your trusted partner for crankshaft and engine performance solutions.</p>
+</div>
+
+<div class="about">
+    <div class="about-content">
+        <img src="assets/img/about/01.jpg" alt="About Us" class="about-image">
+        <div>
+            <h2>About Us</h2>
+            <p>Welcome to Panesar Crankshaft Centre, a leader in auto and mechanical engineering in Kenya. With over 20 years of experience, our company has built a solid reputation for quality and reliability in the industry.</p>
+            <p>Founded by Mr. P.S. Panesar, we are committed to providing exceptional engineering solutions that meet the needs of our diverse clientele. Our state-of-the-art workshop is fully equipped to handle a wide range of projects, from manufacturing to repairs, ensuring that we maintain stringent quality control throughout every stage of the process.</p>
+            <p>At Panesar Crankshaft Centre, we pride ourselves on our dedication to innovation and excellence. Our investment in the latest machinery allows us to comply with the highest industry standards while delivering prompt and efficient services.</p>
+            <p>We understand the importance of convenience for our customers, which is why we now offer free collection and delivery services within Nairobi. Our team of skilled professionals is ready to provide tailored solutions for all your mechanical engineering needs.</p>
+            <p>Thank you for choosing Panesar Crankshaft Centre as your trusted partner. We look forward to serving you!</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    &copy; <span id="currentYear"></span> Panesar Crankshaft Center. All Rights Reserved.
+</div>
+
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    function toggleMenu() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+        if (mobileNav.style.display === 'flex') {
+            document.body.style.overflow = 'hidden'; 
+        } else {
+            document.body.style.overflow = ''; 
+        }
+    }
+
+    window.onclick = function(event) {
+        const mobileNav = document.getElementById('mobileNav');
+        const header = document.getElementById('header');
+        if (!header.contains(event.target) && mobileNav.style.display === 'flex') {
+            mobileNav.style.display = 'none';
+            document.body.style.overflow = ''; 
+        }
+    };
+</script>
+
+</body>
+</html>
+
