@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panesar Crankshaft Centre - Services</title>
+    <title>Panesar Crankshaft Centre - Contact Us</title>
     <link rel="icon" href="assets/img/logo/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400&display=swap" rel="stylesheet">
@@ -20,32 +20,72 @@
             background-color: #b13c43;
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 80px 20px; /* Keep padding same as About Us */
             flex-shrink: 0;
         }
-        .services {
-            max-width: 1000px; /* Increased max width */
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
             margin: 40px auto;
-            text-align: left;
             padding: 20px;
             flex: 1;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px; /* Increased gap between columns */
+            gap: 20px;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
         }
-        .service-item {
+        .contact-info, .contact-form {
+            flex: 1; /* Allows both sections to take equal space */
+            min-width: 300px; /* Minimum width for better responsiveness */
+        }
+        .contact-item {
             display: flex;
-            align-items: start;
+            align-items: center;
             margin-bottom: 20px;
         }
-        .service-item i {
+        .contact-item i {
             font-size: 24px;
             color: #b13c43;
             margin-right: 10px;
         }
-        .service-item h3 {
+        .contact-item h3 {
             margin: 0;
             color: #b13c43;
+        }
+        .contact-form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            margin-bottom: 20px;
+            color: #b13c43;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #b13c43;
+            outline: none;
+        }
+        .contact-form button {
+            background-color: #b13c43;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #a12d36;
         }
         .header {
             position: fixed;
@@ -155,8 +195,8 @@
             .menu-icon {
                 display: block;
             }
-            .services {
-                grid-template-columns: 1fr; /* Single column on smaller screens */
+            .contact-container {
+                flex-direction: column; /* Stack items on smaller screens */
             }
         }
         @media (max-width: 480px) {
@@ -183,9 +223,9 @@
         <div class="nav" id="nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="services.html" class="active">Services</a>
+            <a href="services.html">Services</a>
             <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="active">Contact</a>            
         </div>
         <div class="menu-icon" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
@@ -195,149 +235,49 @@
 <div class="mobile-nav" id="mobileNav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="services.html" class="active">Services</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>    
+    <a href="contact.html" class="active">Contact</a>
 </div>
 
 <div class="banner">
-    <h1>Our Services</h1>
-    <p>Expert solutions for all your crankshaft and engine performance needs.</p>
+    <h1>Contact Us</h1>
+    <p>We would love to hear from you!</p>
 </div>
 
-<div class="services">
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Crankshaft Repair</h3>
-            <p>We offer professional crankshaft repair services using advanced techniques to restore your engine's performance.</p>
+<div class="contact-container">
+    <div class="contact-info">
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+                <h3>Location</h3>
+                <p>Off Old Mombasa Road,<br>P.O. Box 26281 - 00504, Nairobi, Kenya</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+                <h3>Mobile</h3>
+                <p>0787668 774<br>0733 668 774 / 0722 668774</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+                <h3>Email</h3>
+                <p>panesarcc@gmail.com<br>panesarecl@gmail.com</p>
+            </div>
         </div>
     </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Manufacturing</h3>
-            <p>Our state-of-the-art workshop manufactures high-quality crankshafts and engine components tailored to your specifications.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Engine Balancing</h3>
-            <p>Achieve optimal performance with our engine balancing services, ensuring smooth and efficient operation.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Custom Fabrication</h3>
-            <p>We provide custom fabrication services for unique projects, leveraging our expertise in mechanical engineering.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Inspection and Diagnostics</h3>
-            <p>Thorough inspection and diagnostics to identify issues and recommend effective solutions for your engine problems.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Free Collection and Delivery</h3>
-            <p>Enjoy our free collection and delivery service within Nairobi, providing convenience and ease for our customers.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Crankshaft Grinding</h3>
-            <p>Precision crankshaft grinding to restore your engine's efficiency and performance.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Engine Block Resleeving & Line Boring</h3>
-            <p>Expert resleeving and line boring services for improved engine performance.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Replacing Bearings</h3>
-            <p>Replacement of worn-out bearings to maintain engine integrity and function.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Refurbishing Connecting Rods</h3>
-            <p>Expert refurbishment of connecting rods to ensure optimal engine performance.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Reconditioning Crankshafts</h3>
-            <p>Comprehensive reconditioning services for crankshafts to extend engine life.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Engine Rebuilds</h3>
-            <p>Complete engine rebuild services to restore your vehicle's performance.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Custom Crankshaft Modifications</h3>
-            <p>Tailored modifications to crankshafts to meet specific performance requirements.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Cylinder Head Refacing</h3>
-            <p>Precision refacing of cylinder heads for better engine sealing and performance.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Lathe Work</h3>
-            <p>All types of lathe work to meet a variety of engineering needs.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Earth Moving Machinery Repairs</h3>
-            <p>Specialized repairs for earth moving machinery to keep your projects on track.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Gear Cutting</h3>
-            <p>Expert gear cutting services for precision-engineered components.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>Thermal Cold Spray Welding</h3>
-            <p>Advanced thermal cold spray welding for rollers, shafts, and more.</p>
-        </div>
-    </div>
-    <div class="service-item">
-        <i class="fas fa-wrench"></i>
-        <div>
-            <h3>On-Site Line Boring</h3>
-            <p>Line boring services for heavy earth moving machines on-site in Nairobi.</p>
-        </div>
+
+    <div class="contact-form">
+        <h2>Get in Touch</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </div>
 </div>
 
