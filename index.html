@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto Service</title>
-    <link rel="icon" href="assets/img/logo/favicon.jpg" type="image/png">
+    <link rel="icon" href="assets/img/logo/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body, html {
@@ -28,7 +28,6 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            /* Removed opacity */
         }
         .overlay {
             position: absolute; 
@@ -36,7 +35,7 @@
             left: 0; 
             width: 100%; 
             height: 100%; 
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            background-color: rgba(0, 0, 0, 0.5);
             display: flex;
             flex-direction: column; 
             align-items: center; 
@@ -73,7 +72,7 @@
             width: 100%;
             padding: 15px 0;
             background-color: white;
-            color: navy;
+            color: black; /* Changed from navy to black */
         }
         .header-content {
             display: flex;
@@ -83,7 +82,7 @@
         }
         .logo {
             font-size: 24px;
-            color: navy;
+            color: black; /* Changed from navy to black */
         }
         .logo img {
             height: 40px;
@@ -94,7 +93,7 @@
             position: relative;
         }
         .nav a {
-            color: navy;
+            color: black; /* Changed from navy to black */
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
@@ -104,7 +103,7 @@
             color: #FFD700; 
         }
         .nav a.active {
-            color: navy; 
+            color: black; /* Changed from navy to black */
         }
         .nav a.active::after {
             content: '';
@@ -113,13 +112,13 @@
             left: 0;
             width: 50%;
             height: 4px;
-            background-color: orange;
+            background-color: #b13c43; /* Dark red */
             border-radius: 2px;
         }
         .menu-icon {
             display: none;
             font-size: 24px;
-            color: navy;
+            color: black; /* Changed from navy to black */
             cursor: pointer;
         }
         .mobile-nav {
@@ -167,7 +166,7 @@
             opacity: 1;
         }
         .footer {
-            background-color: navy;
+            background-color: black; /* Changed from navy to black */
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -224,7 +223,7 @@
     <div class="header" id="header">
         <div class="header-content">
             <a href="index.html" class="logo">
-                <img src="assets/img/logo/logo.png" alt="AutoService Logo">
+                <img src="assets/img/logo/logo.jpg" alt="PCC Logo">
             </a>
             <div class="nav" id="nav">
                 <a href="#" class="active">Home</a>
