@@ -356,26 +356,26 @@
         }
     });
 
-    // Mouse drag functionality
-    function handleMouseDown(event) {
+    // Touch functionality
+    function handleTouchStart(event) {
         isDragging = true;
-        startX = event.clientX;
-        stopAutoSlide(); // Pause auto sliding on mouse down
+        startX = event.touches[0].clientX;
+        stopAutoSlide(); // Pause auto sliding on touch start
     }
 
-    function handleMouseMove(event) {
+    function handleTouchMove(event) {
         if (!isDragging) return;
-        currentX = event.clientX;
+        currentX = event.touches[0].clientX;
         const distance = startX - currentX;
 
         slides.style.transform = 'translateX(' + (-index * 100 - (distance / window.innerWidth * 100)) + '%)';
     }
 
-    function handleMouseUp(event) {
+    function handleTouchEnd(event) {
         if (!isDragging) return;
         isDragging = false;
 
-        const distance = startX - event.clientX;
+        const distance = startX - event.changedTouches[0].clientX;
         if (distance > 50) {
             // Swipe left
             showSlide(index + 1);
@@ -384,29 +384,17 @@
             showSlide(index - 1);
         } else {
             // Reset the position
-            showSlide(index);
+            slides.style.transform = 'translateX(' + (-index * 100) + '%)';
         }
 
-        // Reset transform after drag
-        slides.style.transform = 'translateX(' + (-index * 100) + '%)';
         startAutoSlide(); // Resume auto sliding
     }
 
-    // Add mouse event listeners
+    // Add touch event listeners
     const slider = document.querySelector('.slider');
-    slider.addEventListener('mousedown', handleMouseDown);
-    slider.addEventListener('mousemove', handleMouseMove);
-    slider.addEventListener('mouseup', handleMouseUp);
-    slider.addEventListener('mouseleave', handleMouseUp); // Handle case if mouse leaves the slider
-    slider.addEventListener('touchstart', (event) => {
-        stopAutoSlide(); // Pause auto sliding on touch start
-        handleMouseDown(event.touches[0]); // Use the first touch point
-    });
-    slider.addEventListener('touchmove', (event) => handleMouseMove(event.touches[0])); // Use the first touch point
-    slider.addEventListener('touchend', (event) => {
-        handleMouseUp(event);
-        startAutoSlide(); // Resume auto sliding on touch end
-    });
+    slider.addEventListener('touchstart', handleTouchStart);
+    slider.addEventListener('touchmove', handleTouchMove);
+    slider.addEventListener('touchend', handleTouchEnd);
 
     window.onclick = function(event) {
         const mobileNav = document.getElementById('mobileNav');
