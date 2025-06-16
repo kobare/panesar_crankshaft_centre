@@ -11,7 +11,7 @@ categories: blog
 sub_category: machinery
 type: insights
 technology: Crankshaft Grinding
-permalink: "category/blog/machinery/insights/20250616/onsite-crankshaft-grinding-africa"
+permalink: "blog/onsite-crankshaft-grinding-africa"
 ---
 
 Crankshaft grinding is a critical process for maintaining the performance and longevity of heavy machinery engines. For industries operating across Africa, onsite crankshaft grinding services are becoming the preferred solution for efficient and cost-effective engine repair.
