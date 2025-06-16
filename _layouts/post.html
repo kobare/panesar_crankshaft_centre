@@ -1,0 +1,167 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    article.post-detail {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    .post-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #b13c43;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: #999;
+      flex-wrap: wrap;
+    }
+    .post-meta img.avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #b13c43;
+    }
+    .post-meta .author {
+      font-weight: 600;
+      color: #555;
+    }
+    .post-meta .duration {
+      background: #b13c43;
+      color: white;
+      border-radius: 20px;
+      padding: 0.2rem 0.75rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+    .post-categories {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .post-categories span {
+      background: #f4f4f4;
+      padding: 0.25rem 0.7rem;
+      border-radius: 15px;
+      margin-right: 0.5rem;
+      font-weight: 600;
+      color: #b13c43;
+      text-transform: capitalize;
+      cursor: default;
+      user-select: none;
+    }
+    .post-image {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      object-fit: cover;
+      max-height: 400px;
+    }
+    .post-content {
+      line-height: 1.75;
+      font-size: 1.1rem;
+      color: #444;
+    }
+    .post-content h2, .post-content h3 {
+      color: #b13c43;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .post-content p {
+      margin-bottom: 1rem;
+    }
+    .newsletter-section {
+      margin: 3rem auto;
+      max-width: 600px;
+      text-align: center;
+    }
+    .comments-section {
+      margin: 3rem auto;
+      max-width: 600px;
+    }
+    @media (max-width: 600px) {
+      .post-title {
+        font-size: 2rem;
+      }
+      .post-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  {% include header.html %}
+
+<br><br><br>
+  <section class="container">
+    <article class="post-detail" data-aos="fade-up" data-aos-delay="400">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <div class="post-meta">
+        {% if page.avatar %}
+          <img src="{{ page.avatar }}" alt="{{ page.author }}" class="avatar" />
+        {% endif %}
+        <div class="author">Author: {{ page.author }}</div>
+        <div class="post-date">{{ page.date | date: "%B %d, %Y" }}</div>
+        {% if page.duration %}
+          <div class="duration">{{ page.duration }} min read</div>
+        {% endif %}
+      </div>
+
+      <div class="post-categories">
+        <span>{{ page.categories }}</span>
+        {% if page.sub_category %}<span>{{ page.sub_category }}</span>{% endif %}
+        {% if page.type %}<span>{{ page.type }}</span>{% endif %}
+        {% if page.technology %}<span>{{ page.technology }}</span>{% endif %}
+      </div>
+
+      {% assign post_img_url = page.img | split: ' ' | first | default: '/assets/img/blog/thumbnails/default-thumb.jpg' %}
+      <img
+        src="{{ post_img_url | relative_url }}"
+        alt="{{ page.title }}"
+        class="post-image"
+        loading="lazy"
+        onerror="this.onerror=null; this.src='{{ '/assets/img/blog/thumbnails/default-thumb.jpg' | relative_url }}'"
+      />
+
+      <div class="post-content">
+        {{ content | markdownify }}
+      </div>
+    </article>
+  </section>
+
+
+  <section class="comments-section reduce-size bg-light">
+    {% include disqus.html %}
+  </section>
+
+  {% include javascripts.html %}
+</body>
+</html>
+
