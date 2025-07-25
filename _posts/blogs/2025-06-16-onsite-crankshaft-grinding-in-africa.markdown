@@ -4,7 +4,7 @@ title: "Onsite Crankshaft Grinding In Africa: Expert Repair Services at Your Loc
 bread_crumb: "Blog"
 author: Koby
 avatar: /assets/img/blog/authors/koby.jpg
-duration: 6
+duration: 3
 date: 2025-06-16 10:00:00 +0300
 img: /assets/img/blog/thumbnails/onsite_crankshaft_grinding_africa.jpg 1x, /assets/img/blog/thumbnails/160625.jpg 2x
 categories: blog
