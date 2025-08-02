@@ -1,20 +1,20 @@
 ---
 layout: post
-title: "Insitu Crankshaft Grinding for Wartsila Engines: Precision Repair Without Engine Removal"
+title: "In Situ Crankshaft Grinding for Wartsila Engines: Precision Repair Without Engine Removal"
 bread_crumb: "Blog"
 author: Koby
 avatar: /assets/img/blog/authors/koby.jpg
 duration: 3
 date: 2025-08-02 10:00:00 +0300
-img: /assets/img/blog/thumbnails/insitu_crankshaft_grinding_wartsila.jpg 1x, /assets/img/blog/thumbnails/020825i.jpg 2x
+img: /assets/img/blog/thumbnails/in_situ_crankshaft_grinding_wartsila.jpg 1x, /assets/img/blog/thumbnails/020825i.jpg 2x
 categories: blog
 sub_category: machinery
 type: insights
 technology: Crankshaft Grinding
-permalink: "blog/insitu-crankshaft-grinding-wartsila"
+permalink: "blog/in-situ-crankshaft-grinding-wartsila"
 ---
 
-Wartsila engines power critical operations in marine, power generation, and offshore sectors—often in remote or high-demand environments where downtime is not an option. When crankshaft damage occurs, **insitu crankshaft grinding** offers a fast, reliable, and cost-effective solution—without the need for engine removal or costly transport.
+Wartsila engines power critical operations in marine, power generation, and offshore sectors—often in remote or high-demand environments where downtime is not an option. When crankshaft damage occurs, **in situ crankshaft grinding** offers a fast, reliable, and cost-effective solution—without the need for engine removal or costly transport.
 
 At **Panesar Crankshaft Centre**, we specialize in onsite crankshaft grinding for Wartsila engines, restoring journal surfaces to original OEM specifications using portable, high-precision equipment.
 
