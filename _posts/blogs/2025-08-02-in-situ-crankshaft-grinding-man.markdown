@@ -1,24 +1,24 @@
 ---
 layout: post
-title: "Insitu Crankshaft Grinding for MAN Engines: Onsite Repair for Maximum Uptime"
+title: "In Situ Crankshaft Grinding for MAN Engines: Onsite Repair for Maximum Uptime"
 bread_crumb: "Blog"
 author: Koby
 avatar: /assets/img/blog/authors/koby.jpg
 duration: 3
 date: 2025-08-02 10:00:00 +0300
-img: /assets/img/blog/thumbnails/insitu_crankshaft_grinding_man.jpg 1x, /assets/img/blog/thumbnails/020825man.jpg 2x
+img: /assets/img/blog/thumbnails/in_situ_crankshaft_grinding_man.jpg 1x, /assets/img/blog/thumbnails/020825man.jpg 2x
 categories: blog
 sub_category: machinery
 type: insights
 technology: Crankshaft Grinding
-permalink: "blog/insitu-crankshaft-grinding-man"
+permalink: "blog/in-situ-crankshaft-grinding-man"
 ---
 
-MAN engines are trusted worldwide for their performance in marine vessels, power plants, and industrial equipment. But when crankshaft damage occurs, even the most robust engine is at risk of unplanned shutdowns. That’s where **insitu crankshaft grinding** comes in—restoring crankshaft surfaces to full functionality **without engine removal**.
+MAN engines are trusted worldwide for their performance in marine vessels, power plants, and industrial equipment. But when crankshaft damage occurs, even the most robust engine is at risk of unplanned shutdowns. That’s where **in situ crankshaft grinding** comes in—restoring crankshaft surfaces to full functionality **without engine removal**.
 
 At **Panesar Crankshaft Centre**, we provide specialized **onsite crankshaft grinding for MAN engines** across Africa, using precision equipment and OEM-guided procedures.
 
-### Why Insitu Grinding for MAN Engines?
+### Why In Situ Grinding for MAN Engines?
 
 Crankshafts can suffer from wear, scoring, heat damage, and journal misalignment due to bearing failure or lubrication issues. Replacing or removing a crankshaft is expensive and time-consuming. With **onsite grinding**, the crankshaft is repaired in place—minimizing cost and downtime.
 
@@ -75,7 +75,7 @@ We deploy rapidly across Africa with full toolkits, experienced technicians, and
 
 ### Keep Your MAN Engine Running Smoothly
 
-If your MAN engine is showing signs of crankshaft damage—don’t wait for failure. Our **insitu crankshaft grinding service** ensures fast, accurate repairs without downtime or disassembly.
+If your MAN engine is showing signs of crankshaft damage—don’t wait for failure. Our **in situ crankshaft grinding service** ensures fast, accurate repairs without downtime or disassembly.
 
 **Need urgent help with your MAN engine?**  
 Book an inspection and grinding service today, and get your equipment back to full performance.
