@@ -6,7 +6,7 @@ author: Koby
 avatar: /assets/img/blog/authors/koby.jpg
 duration: 3
 date: 2025-08-02 10:00:00 +0300
-img: /assets/img/blog/thumbnails/in_situ_crankshaft_grinding_daihatsu.jpg 1x, /assets/img/blog/thumbnails/020825daihatsu.jpg 2x
+img: /assets/img/blog/thumbnails/01.jpg 1x, /assets/img/blog/thumbnails/020825daihatsu.jpg 2x
 categories: blog
 sub_category: machinery
 type: insights
