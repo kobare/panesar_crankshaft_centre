@@ -128,7 +128,9 @@ layout: default
           <img src="{{ page.avatar }}" alt="{{ page.author }}" class="avatar" />
         {% endif %}
         <div class="author">Author: {{ "Admin" || page.author }}</div>
+        <!--
         <div class="post-date">{{ page.date | date: "%B %d, %Y" }}</div>
+        -->
         {% if page.duration %}
           <div class="duration">{{ page.duration }} min read</div>
         {% endif %}
