@@ -33,7 +33,7 @@ main {
     position: absolute;
     top: 0; 
     left: 0; 
-    width: 98%; 
+    width: 100%; 
     height: 100%; 
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
@@ -43,19 +43,23 @@ main {
     color: white;
     text-align: center;
     z-index: 5; 
-    padding: 20px; 
+    padding: 30px 20px; 
+    box-sizing: border-box;
   }
   .heading {
     font-family: 'Playfair Display', serif;
-    font-size: 48px; 
-    margin-bottom: 15px; 
-    text-transform: uppercase; 
+    font-size: clamp(1.8rem, 5vw, 3rem); 
+    margin-bottom: 10px; 
+    text-transform: uppercase;
+    padding: 0 10px;
+    word-break: break-word; /* avoid long words overflowing */ 
   }
   .description {
-    font-size: 24px; 
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem); 
     max-width: 600px; 
     line-height: 1.5;
     padding: 0 20px;
+    word-break: break-word;
   }
 
   /* Banner Section */
@@ -503,4 +507,14 @@ main {
     .nav a {
       font-size: 16px;
     }
+    
+    .overlay {
+      padding: 20px 15px;
+    }
+    .heading {
+      font-size: clamp(1.4rem, 7vw, 2rem);
+    }
+    .description {
+      font-size: clamp(1.2rem, 3.5vw, 1.2rem);
+    }   
   }
