@@ -1,0 +1,149 @@
+<!-- Header -->
+{% assign nav_links = 
+  "Home:/,About:/about,Services:/services,Gallery:/gallery,Blog:/blog,Contact:/contact" | split: "," 
+%}
+{% assign home_page = '/' %}
+
+{% if home_page == page.url %}
+<div class="slider">
+  <div class="slides">
+    <div class="slide" style="background-image: url('assets/img/home_bg/bg-01.png');">
+      <div class="overlay">
+        <div class="heading">Turbine Shaft Repair and Grinding</div>
+        <div class="description">Our expert repair and grinding services restore turbine shafts to optimal condition, ensuring reliable performance and efficient operation.</div>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('assets/img/home_bg/bg-02.png');">
+      <div class="overlay">
+        <div class="heading">Engine Block Resleeving & Linebore</div>
+        <div class="description">We specialize in engine block resleeving and linebore services to restore your engine's integrity and performance.</div>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('assets/img/home_bg/bg-03.png');">
+      <div class="overlay">
+        <div class="heading">Crankshaft Grinding and Reconditioning</div>
+        <div class="description">Our reconditioning services for crankshafts guarantee enhanced performance and reliability for your engine.</div>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('assets/img/home_bg/bg-04.png');">
+      <div class="overlay">
+        <div class="heading">Replacing Bearings</div>
+        <div class="description">Our expert technicians ensure precise replacement of bearings, enhancing the longevity and performance of your engine.</div>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('assets/img/home_bg/bg-05.png');">
+      <div class="overlay">
+        <div class="heading">Refurbishing Connecting Rods</div>
+        <div class="description">We provide comprehensive refurbishing services for connecting rods, ensuring they meet the highest standards of performance.</div>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('assets/img/home_bg/bg-06.png');">
+      <div class="overlay">
+        <div class="heading">Cylinder Head Refacing</div>
+        <div class="description">Accurate refacing of cylinder heads to improve engine sealing and optimize performance.</div>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('assets/img/home_bg/bg-07.png');">
+      <div class="overlay">
+        <div class="heading">Lathe Work</div>
+        <div class="description">Comprehensive lathe services tailored to address a wide range of engineering requirements.</div>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('assets/img/home_bg/bg-08.png');">
+      <div class="overlay">
+        <div class="heading">Gear Cutting</div>
+        <div class="description">Specialized gear cutting services for high-precision engineered components.</div>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('assets/img/home_bg/bg-09.png');">
+      <div class="overlay">
+        <div class="heading">Thermal Cold Spray Welding</div>
+        <div class="description">Cutting-edge thermal cold spray welding for rollers, shafts, and various applications.</div>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('assets/img/home_bg/bg-10.png');">
+      <div class="overlay">
+        <div class="heading">White Metal (Babbitt) Services</div>
+        <div class="description">Specialized services for Babbitt bearings, including precision machining, reconditioning, and custom casting to enhance performance and durability.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header" id="header">
+    <div class="header-content">
+      <a href="/" class="logo">
+        <img src="/assets/img/logo/logo.jpg" alt="PCC Logo">
+      </a>
+      <div class="nav" id="nav">
+        {% for item in nav_links %}
+          {% assign parts = item | split: ":" %}
+          <a href="{{ parts[1] }}">{{ parts[0] }}</a>
+        {% endfor %}
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    {% for item in nav_links %}
+      {% assign parts = item | split: ":" %}
+      <a href="{{ parts[1] }}">{{ parts[0] }}</a>
+    {% endfor %}
+  </div>
+
+  <div class="dots" id="dots"></div>
+</div>
+
+{% else %}
+
+<div class="header" id="header">
+  <div class="header-content">
+    <a href="/" class="logo">
+      <img src="/assets/img/logo/logo.jpg" alt="PCC Logo">
+    </a>
+    <div class="nav" id="nav">
+      {% for item in nav_links %}
+        {% assign parts = item | split: ":" %}
+        <a href="{{ parts[1] }}">{{ parts[0] }}</a>
+      {% endfor %}
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-nav" id="mobileNav">
+  {% for item in nav_links %}
+    {% assign parts = item | split: ":" %}
+    <a href="{{ parts[1] }}">{{ parts[0] }}</a>
+  {% endfor %}
+</div>
+
+{% endif %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+
+    function setActiveLinks(containerId) {
+      const nav = document.getElementById(containerId);
+      if (!nav) return;
+      const links = nav.querySelectorAll('a');
+      links.forEach(link => {
+        const linkPath = link.getAttribute('href').replace(/\/$/, '') || '/';
+        if (linkPath === currentPath) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    setActiveLinks('nav');
+    setActiveLinks('mobileNav');
+  });
+</script>
+

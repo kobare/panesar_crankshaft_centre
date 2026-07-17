@@ -1,0 +1,32 @@
+---
+layout: default
+bread_crumb: Blog
+title: Blog
+permalink: "blog/"
+---
+
+<div class="banner">
+  <h1>Our Blog</h1>
+  <p>Latest news, insights, and updates from Panesar Crankshaft Centre.</p>
+</div>
+
+<div class="blog-list">
+  {% for post in site.posts %}
+  <article class="blog-item">
+    <img
+  src="{{ post.img | default: '/assets/img/blog/thumbnails/default-thumb.jpg' | relative_url }}"
+  alt="{{ post.title }}"
+  class="blog-thumb"
+  onerror="this.onerror=null; this.src='{{ '/assets/img/blog/thumbnails/default-thumb.jpg' | relative_url }}'"
+/>
+    <div class="blog-content">
+      <h2 class="blog-title">{{ post.title }}</h2>
+      <p class="blog-excerpt">
+        {{ post.excerpt | strip_html | truncate: 150 }}
+      </p>
+      <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+
