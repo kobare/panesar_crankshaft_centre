@@ -6,7 +6,7 @@ author: Koby
 avatar: /assets/img/blog/authors/koby.jpg
 duration: 4
 date: 2026-08-06 10:00:00 +0300
-img: /assets/img/blog/thumbnails/default-thumb.jpg 1x, /assets/img/blog/thumbnails/default-thumb.jpg 2x
+img: /assets/img/blog/thumbnails/14.jpg 1x, /assets/img/blog/thumbnails/14.jpg 2x
 categories: blog
 sub_category: machinery
 type: insights
