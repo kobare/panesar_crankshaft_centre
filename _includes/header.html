@@ -11,60 +11,70 @@
       <div class="overlay">
         <div class="heading">Turbine Shaft Repair and Grinding</div>
         <div class="description">Our expert repair and grinding services restore turbine shafts to optimal condition, ensuring reliable performance and efficient operation.</div>
+        <a href="/blog/turbine-shaft-grinding-africa" class="slider-link">Learn More →</a>
       </div>
     </div>
     <div class="slide" style="background-image: url('assets/img/home_bg/bg-02.png');">
       <div class="overlay">
         <div class="heading">Engine Block Resleeving & Linebore</div>
         <div class="description">We specialize in engine block resleeving and linebore services to restore your engine's integrity and performance.</div>
+        <a href="/blog/engine-block-resleeving-linebore-africa" class="slider-link">Learn More →</a>
       </div>
     </div>
     <div class="slide" style="background-image: url('assets/img/home_bg/bg-03.png');">
       <div class="overlay">
         <div class="heading">Crankshaft Grinding and Reconditioning</div>
         <div class="description">Our reconditioning services for crankshafts guarantee enhanced performance and reliability for your engine.</div>
+        <a href="/blog/crankshaft-reconditioning-africa" class="slider-link">Learn More →</a>
       </div>
     </div>
     <div class="slide" style="background-image: url('assets/img/home_bg/bg-04.png');">
       <div class="overlay">
         <div class="heading">Replacing Bearings</div>
         <div class="description">Our expert technicians ensure precise replacement of bearings, enhancing the longevity and performance of your engine.</div>
+        <a href="/blog/replacing-bearings-africa" class="slider-link">Learn More →</a>
       </div>
     </div>
     <div class="slide" style="background-image: url('assets/img/home_bg/bg-05.png');">
       <div class="overlay">
         <div class="heading">Refurbishing Connecting Rods</div>
         <div class="description">We provide comprehensive refurbishing services for connecting rods, ensuring they meet the highest standards of performance.</div>
+        <a href="/blog/refurbishing-connecting-rods-africa" class="slider-link">Learn More →</a>
       </div>
     </div>
     <div class="slide" style="background-image: url('assets/img/home_bg/bg-06.png');">
       <div class="overlay">
         <div class="heading">Cylinder Head Refacing</div>
         <div class="description">Accurate refacing of cylinder heads to improve engine sealing and optimize performance.</div>
+        <a href="/blog/cylinder-head-refacing-africa" class="slider-link">Learn More →</a>
       </div>
     </div>
     <div class="slide" style="background-image: url('assets/img/home_bg/bg-07.png');">
       <div class="overlay">
         <div class="heading">Lathe Work</div>
         <div class="description">Comprehensive lathe services tailored to address a wide range of engineering requirements.</div>
+        <a href="/blog/lathework-africa" class="slider-link">Learn More →</a>
       </div>
     </div>
     <div class="slide" style="background-image: url('assets/img/home_bg/bg-08.png');">
       <div class="overlay">
         <div class="heading">Gear Cutting</div>
         <div class="description">Specialized gear cutting services for high-precision engineered components.</div>
+        <a href="/blog/gear-cutting-africa" class="slider-link">Learn More →</a>
       </div>
     </div>
     <div class="slide" style="background-image: url('assets/img/home_bg/bg-09.png');">
       <div class="overlay">
         <div class="heading">Thermal Cold Spray Welding</div>
         <div class="description">Cutting-edge thermal cold spray welding for rollers, shafts, and various applications.</div>
+        <a href="/blog/onsite-thermal-cold-spray-welding-africa" class="slider-link">Learn More →</a>
       </div>
     </div>
     <div class="slide" style="background-image: url('assets/img/home_bg/bg-10.png');">
       <div class="overlay">
         <div class="heading">White Metal (Babbitt) Services</div>
         <div class="description">Specialized services for Babbitt bearings, including precision machining, reconditioning, and custom casting to enhance performance and durability.</div>
+        <a href="/blog/white-metal-babbitt-services-africa" class="slider-link">Learn More →</a>
       </div>
     </div>
   </div>
@@ -124,6 +134,40 @@
 
 {% endif %}
 
+<style>
+  .slider-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 24px;
+    background: rgba(192, 57, 43, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #c0392b;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid rgba(192, 57, 43, 0.4);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.1);
+  }
+  .slider-link:hover {
+    background: rgba(192, 57, 43, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: #fff;
+    border-color: rgba(192, 57, 43, 0.7);
+    box-shadow: 0 8px 25px rgba(192, 57, 43, 0.25);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  .slider-link:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(192, 57, 43, 0.15);
+  }
+</style>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
@@ -146,4 +190,3 @@
     setActiveLinks('mobileNav');
   });
 </script>
-
