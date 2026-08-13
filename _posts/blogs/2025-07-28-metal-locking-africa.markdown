@@ -6,7 +6,7 @@ author: Koby
 avatar: /assets/img/blog/authors/koby.jpg
 duration: 3
 date: 2025-07-28 10:00:00 +0300
-img: /assets/img/blog/thumbnails/metal_locking_africa.jpg 1x, /assets/img/blog/thumbnails/280725h.jpg 2x
+img: /assets/img/blog/thumbnails/19.jpg 1x, /assets/img/blog/thumbnails/19.jpg 2x
 categories: blog
 sub_category: machinery
 type: insights
